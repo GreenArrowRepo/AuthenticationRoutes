@@ -1,0 +1,48 @@
+
+<header class="header">
+    <nav>
+        <div class="container-fluid">
+            <app-header-links *ngIf="headerNav"></app-header-links>
+
+             <!-- log in block-->
+            <div class="d-flex justify-content-end">
+                
+                <ng-container *ngIf="headerLoginBack">
+
+                    <button  class="btn btn-outline-primary">Dashboard</button>
+
+                    <button *ngIf="!loggedInUser" class="btn btn-outline-primary" routerLink="login" >sign in</button>
+                    
+                    <ul *ngIf="loggedInUser">
+                        <li>
+                            Welcome <strong class="text-primary">{{loggedInUser}}</strong>
+                        </li>
+                        <li>
+                            <a (click)="onLogOut()"><i class="fas fa-unnlock"></i>Logout</a>
+                        </li>
+                    </ul>
+                </ng-container>
+            
+            </div>
+        </div>
+
+        <!-- addresss contact-->
+        <div class="float-right" *ngIf="headerContanctDetails">
+            <a href="mailto:hims.mehuriya@gmail.com"><i class="fas fa-envolope"></i>hims.mehuriya@gmail.com</a><br>
+            <a href="mailto:hims.mehuriya@gmail.com"><i class="fas fa-phone"></i>+91 0123456789</a>
+        </div>
+        
+        <!-- go back-->
+        <div class="float-right">
+            <a routerLink="/products" class="back" *ngIf="goBackLink">
+                    <i class="fas fa-chevron-right"></i>Back to products
+                </a>
+        </div>
+
+       
+            
+
+    </nav>
+   
+</header>
+
