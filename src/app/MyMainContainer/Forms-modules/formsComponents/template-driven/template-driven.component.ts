@@ -1,5 +1,6 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { FormBuilder, FormGroup, NgForm, Validators } from '@angular/forms';
+import { AuthService } from 'src/app/appServices/auth.service';
 
 @Component({
   selector: 'app-template-driven',
@@ -12,7 +13,7 @@ export class TemplateDrivenComponent implements OnInit {
 
   form: any;
 
-  constructor(private fb : FormBuilder) { 
+  constructor(private fb : FormBuilder, private authService : AuthService) { 
     console.log("template driven module loaded.")
   }
 
@@ -35,8 +36,20 @@ export class TemplateDrivenComponent implements OnInit {
   onSubmit()
   {
     //console.log(formReceived) 
+    if(this.form.valid)
+    {
     console.log(this.form.value);
     this.submitted = true;
+    const sendEmail = this.form.value.email;
+    const sendPassword = this.form.value.password;
+    this.authService.signUp(sendEmail, sendPassword).subscribe(
+      res => {console.log(res)},
+      err => {
+        console.log(err)
+      }
+
+    )
+    }
     
     
   }

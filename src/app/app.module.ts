@@ -18,41 +18,31 @@ import { ReactiveformsComponent } from '../app/MyMainContainer/Forms-modules/for
 import { TemplateDrivenComponent } from '../app/MyMainContainer/Forms-modules/formsComponents/template-driven/template-driven.component';
 import { RouterModule } from '@angular/router';
 import { LoginModule } from './MyMainContainer/login/login/login.module';
+import { ManageProductsComponent } from './manage-products/manage-products/manage-products.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     MyMainContainerComponent,
-    
     HeaderComponent,
     RoutingComponent,
-    
     LoginComponent,
     PagenotfoundComponent,
-   
-    
     HeaderLinksComponent,
-    
-
     TemplateDrivenComponent,
     ReactiveformsComponent,
-   
+    ManageProductsComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     BrowserAnimationsModule,
-    
     HttpClientModule,
     ReactiveFormsModule,
     AppRoutingModule,
     RouterModule,
-    
-    LoginModule,
-    
-    
-    
+    LoginModule,  
   ],
   providers: [],
   bootstrap: [AppComponent]

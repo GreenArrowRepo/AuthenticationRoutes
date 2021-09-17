@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormArray, FormControl, FormGroup, ValidationErrors, Validators } from '@angular/forms';
 import { Observable } from 'rxjs';
-
+import { ManageProductsComponent } from 'src/app/manage-products/manage-products/manage-products.component';
 
 @Component({
   selector: 'app-reactiveforms',
